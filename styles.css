@@ -3,6 +3,54 @@ body {
     /* font-family: Arial, Helvetica, sans-serif; */
 }
 
+#extrovert{
+    background-color: #E944BA;
+    height: 1.5rem;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#ambivert{
+    background-color: #E944BA;
+    height: 1.5rem;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#introvert{
+    background-color: #44CDE9;
+    height: 1.5rem;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#breakdown{
+    border: 1px solid grey;
+    margin: 4rem auto;
+    max-width: 680px;
+    width: 100%;
+    padding: 2rem;
+    border-radius: 10px;
+    height: 15rem;
+}
+
+#breakdown p {
+    font-size: 1.5rem;
+}
+
+#introvert-percentage, #extrovert-percentage{
+    font-size: 1rem;
+    text-align: left;
+}
+
+.progress-bar{
+    background-color: white;
+    border: 1px solid grey;
+    height: 1.5rem;
+    border-radius: 5px;
+    margin: .5rem 0;
+}
+
 label {
     font-size: 1.2rem;
     display: inline-block;
@@ -20,7 +68,7 @@ label {
 #wrapper{
     border: 1px solid grey;
     margin: 8rem auto;
-    max-width: 580px;
+    max-width: 680px;
     padding: 2rem;
     border-radius: 10px;
     height: 15rem;
@@ -30,11 +78,16 @@ label {
     animation: fadeIn 1.25s ease-in-out;
 }
 
+.results {
+    animation: loadResults 3s ease-in-out;
+}
+
 #results {
     display: flex;
+    background-color: #F4F5F5;
     border: 1px solid grey;
-    margin: 10rem auto;
-    max-width: 580px;
+    margin: 1rem auto;
+    max-width: 680px;
     padding: 2rem;
     border-radius: 10px;
     height: 15rem;
@@ -66,6 +119,15 @@ label {
     }
     to {
         opacity: 100%;
+    }
+}
+
+@keyframes loadResults {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
     }
 }
 

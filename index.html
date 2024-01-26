@@ -14,7 +14,10 @@
   </head>
   <body>
     <div id="container">
-      <h1 id="main-heading">What is your social personality? Answer the questions below to find out more</h1>
+      <h1 id="main-heading">
+        What is your social personality? Answer the questions below to find out
+        more
+      </h1>
       <div id="wrapper">
         <h1 id="question"></h1>
         <div>
@@ -31,6 +34,18 @@
       <div id="results">
         <p>Looks like you are an:</p>
         <h1 id="results-text"></h1>
+      </div>
+
+      <div id="breakdown">
+        <p>Here's a breakdown:</p>
+        <span id="extrovert-percentage">Extrovert</span>
+        <div class="progress-bar">
+          <div id="extrovert"></div>
+        </div>
+        <span id="introvert-percentage">Introvert</span>
+        <div class="progress-bar">
+          <div id="introvert"></div>
+        </div>
       </div>
     </div>
     <script src="./main.js"></script>

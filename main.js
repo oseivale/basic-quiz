@@ -8,7 +8,13 @@ const aBtn = document.getElementById('option-a')
 const bBtn = document.getElementById('option-b')
 const inputA = document.getElementById('input-a')
 const inputB = document.getElementById('input-b')
+const extrovert = document.getElementById('extrovert')
+const introvert = document.getElementById('introvert')
+const ambivert = document.getElementById('ambivert')
+const introvertPercentage = document.getElementById('introvert-percentage')
+const extrovertPercentage = document.getElementById('extrovert-percentage')
 
+const breakdown = document.getElementById('breakdown')
 const container = document.getElementById('container')
 
 var data = [
@@ -31,6 +37,26 @@ var data = [
         question: '4. When you plan a vacation, you:',
         answerA: 'a. prefer lots of social and adventurous activities',
         answerB: 'b. prefer lots of relaxation and alone time'
+    },
+    {
+        question: '5. You prefer:',
+        answerA: 'a. to have a large (20+ poeple) group of friends',
+        answerB: 'b. to have a small (less than 4 people) circle of people in your life'
+    },
+    {
+        question: '6. You are someone who:',
+        answerA: 'a. typically stays at home',
+        answerB: 'b. loves to go out all the time'
+    },
+    {
+        question: '7. When you eat out, you:',
+        answerA: 'a. are okay to sit and eat alone',
+        answerB: 'b. need to go with someone else'
+    },
+    {
+        question: '8. In conflict, you:',
+        answerA: 'a. Observe the situation first, think about it, and wait before you speak',
+        answerB: 'b. react immediately, and need to speak right away'
     }
 ]
 
@@ -41,11 +67,12 @@ const initialState = (function () {
     let lastQuestion = false;
     let results;
     resultsSection.style.display = 'none'
+    breakdown.style.display = 'none'
 
     function displayResults() {
-        if (initialState.getAValue() > 2) {
+        if (initialState.getAValue() > data.length / 2) {
             results = "EXTROVERT"
-        } else if (initialState.getAValue() === 2) {
+        } else if (initialState.getAValue() === data.length / 2) {
             results = 'AMBIVERT'
         } else {
             results = "INTROVERT"
@@ -75,8 +102,25 @@ aBtn.innerText = data[initialState.getIndex()].answerA
 bBtn.innerText = data[initialState.getIndex()].answerB
 initialState.unsetLastQuestion()
 
+function calculateResults() {
+    const introvertResults = initialState.getBValue() / data.length * 100
+    const extrovertResults = initialState.getAValue() / data.length * 100
+
+    extrovert.style.maxWidth = `${extrovertResults}%`
+    introvert.style.maxWidth = `${introvertResults}%`
+
+    introvertPercentage.innerText = `Introvert: ${introvertResults}%`
+
+    extrovertPercentage.innerText = `Extrovert: ${extrovertResults}%`
+
+    console.log('extrovertResults', extrovertResults)
+}
+
 function createQuestions() {
     wrapper.classList.add('fade')
+    breakdown.classList.add('fade')
+    introvert.classList.add('results')
+    extrovert.classList.add('results')
 
     setTimeout(() => {
         wrapper.classList.remove('fade')
@@ -86,6 +130,7 @@ function createQuestions() {
     if (data[initialState.getIndex()] === undefined) {
         initialState.resetIndex();
         resultsSection.style.display = 'block'
+        breakdown.style.display = 'block'
         resultsText.innerText = initialState.displayResults()
         wrapper.style.display = "none"
     }
@@ -102,6 +147,8 @@ function createQuestions() {
 
     inputA.checked = false
     inputB.checked = false
+
+    calculateResults()
 
     console.log('As', initialState.getAValue())
     console.log('Bs', initialState.getBValue())
