@@ -137,6 +137,11 @@ label {
         margin: 2rem 0;
     }
 
+    #breakdown {
+        max-width: 300px;
+        width: 100%;
+    }
+
     #option-a, #option-b {
         width: 90%;
         font-size: 1.1rem;
