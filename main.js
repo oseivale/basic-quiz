@@ -60,6 +60,11 @@ var data = [
     }
 ]
 
+window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+});
+
 const initialState = (function () {
     let initialIndex = 0;
     let aResponses = 0;
@@ -135,6 +140,11 @@ function createQuestions() {
         breakdown.style.display = 'block'
         resultsText.innerText = initialState.displayResults()
         wrapper.style.display = "none"
+
+        window.scrollTo({
+            top: 1000,
+            behavior: "smooth",
+        });
     }
 
     newQuestion.innerText = data[initialState.getIndex()]?.question
@@ -154,6 +164,7 @@ function createQuestions() {
 
     console.log('As', initialState.getAValue())
     console.log('Bs', initialState.getBValue())
+    console.log('half', data.length / 2)
 }
 
 confirmBtn.addEventListener('click', createQuestions)
