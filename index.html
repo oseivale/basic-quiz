@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div id="wrapper">
+        <h1 id="question"></h1>
+        <div>
+          <input type="radio" id="input-a" name="fav_language" value="a" />
+          <label id="option-a"></label>
+          <br />
+          <input type="radio" id="input-b" name="fav_language" value="b" />
+          <label id="option-b"></label>
+          <br />
+          <button id="confirm-btn">Confirm</button>
+        </div>
+      </div>
+
+      <div id="results">
+        <p>Looks like you are an:</p>
+        <h1 id="results-text"></h1>
+      </div>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>

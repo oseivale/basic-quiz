@@ -1,0 +1,62 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+label {
+    font-size: 1.2rem;
+    display: inline-block;
+    margin: .5rem 0;
+}
+
+#wrapper{
+    border: 1px solid grey;
+    margin: 10rem auto;
+    max-width: 580px;
+    padding: 2rem;
+    border-radius: 10px;
+    height: 15rem;
+}
+
+.fade {
+    animation: fadeIn 1.25s ease-in-out;
+}
+
+#results {
+    display: flex;
+    border: 1px solid grey;
+    margin: 10rem auto;
+    max-width: 580px;
+    padding: 2rem;
+    border-radius: 10px;
+    height: 15rem;
+    text-align: center;
+    font-size: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+#confirm-btn {
+    padding: .75rem 1.5rem;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    border-radius: 7px;
+    background-color: #2060E8;
+    color: white;
+    border: none;
+    transition: all .5s;
+}
+
+#confirm-btn:hover {
+    cursor: pointer;
+    background-color: #4478E9;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 20%;
+    }
+    to {
+        opacity: 100%;
+    }
+}
