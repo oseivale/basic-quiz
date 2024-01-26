@@ -9,9 +9,17 @@ label {
     margin: .5rem 0;
 }
 
+#main-heading{
+    font-size: 1.5rem;
+    text-align: center;
+    max-width: 580px;
+    width: 100%;
+    margin: 4rem auto;
+}
+
 #wrapper{
     border: 1px solid grey;
-    margin: 10rem auto;
+    margin: 8rem auto;
     max-width: 580px;
     padding: 2rem;
     border-radius: 10px;
@@ -58,5 +66,26 @@ label {
     }
     to {
         opacity: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #wrapper{
+        height: 20rem;
+        margin: 2rem 0;
+    }
+
+    #option-a, #option-b {
+        width: 90%;
+        font-size: 1.1rem;
+    }
+
+    #results-text {
+        font-size: 3rem;
+    }
+
+    #main-heading{
+        font-size: 1.5rem;
+        text-align: center;
     }
 }
