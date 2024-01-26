@@ -82,6 +82,10 @@ label {
     animation: loadResults 3s ease-in-out;
 }
 
+#results p {
+    font-size: 1.5rem;
+}
+
 #results {
     display: flex;
     background-color: #F4F5F5;
@@ -148,7 +152,7 @@ label {
     }
 
     #results-text {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
     #main-heading{

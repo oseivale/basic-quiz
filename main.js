@@ -40,7 +40,7 @@ var data = [
     },
     {
         question: '5. You prefer:',
-        answerA: 'a. to have a large (20+ poeple) group of friends',
+        answerA: 'a. to have a large (20+ people) group of friends',
         answerB: 'b. to have a small (less than 4 people) circle of people in your life'
     },
     {
@@ -74,8 +74,10 @@ const initialState = (function () {
             results = "EXTROVERT"
         } else if (initialState.getAValue() === data.length / 2) {
             results = 'AMBIVERT'
-        } else {
+        } else if (initialState.getAValue() < data.length / 2 && initialState.getAValue() > 0) {
             results = "INTROVERT"
+        } else if (initialState.getAValue() === 0 && initialState.getBValue() === 0) {
+            results = "Oops! Not enough info. Please try again."
         }
 
         return results;
